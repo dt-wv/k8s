@@ -20,10 +20,6 @@ spec:
         - effect: NoSchedule
           key: node-role.kubernetes.io/master
           operator: Exists
-        - effect: NoExists
-          key: node-role.kubernetes.io/control-plane
-          operator:  ActiveGate instances.
-
 
   activeGate:
 
