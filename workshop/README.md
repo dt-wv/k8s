@@ -10,7 +10,7 @@ open terminal and type the following commands:
 `$ sudo apt-get update`  
 `$ sudo apt-get -y install ca-certificates curl gnupg`
 
-## Step 3 - install Docker
+## Step 3 - install [Docker](https://docs.docker.com/engine/install/ubuntu/)
 `$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`  
 `$ sudo install -m 0755 -d /etc/apt/keyrings`  
 `$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`  
@@ -22,11 +22,11 @@ open terminal and type the following commands:
 `$ sudo apt-get update`  
 `$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
-## Step 4 - install kubectl
+## Step 4 - install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 `$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
-`$ sudo chmod +x kubectl; sudo mv kubectl /usr/local/bin`
+`$ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
 
-## Step 5 - install Kind
+## Step 5 - install [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
 `$ [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64`  
 `$ sudo chmod +x kind; sudo mv kind /usr/local/bin`
 
@@ -38,10 +38,19 @@ open terminal and type the following commands:
 `$ sudo kubectl get nodes`
 
 ## Step 7 - install Dynatrace as CloudNativeFullStack
-Link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-k8s/installation/cloud-native-fullstack)
+`$ sudo su -`
 
-Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml)
+Link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-k8s/installation/cloud-native-fullstack)  
 
+Operator token scopes:
+![](img\operator_k8s_token_scopes.jpg)
+
+Data ingest token scopes:  
+![](img\dataingest_token_scopes.jpg)
+
+Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml)  
+`# curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml`  
+`# kubectl apply -f dynakube-cloudnativefullstack.yml`
 
 
 
