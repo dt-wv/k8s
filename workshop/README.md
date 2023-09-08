@@ -43,10 +43,10 @@ open terminal and type the following commands:
 Link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-k8s/installation/cloud-native-fullstack)  
 
 Operator token scopes:
-![](img\operator_k8s_token_scopes.jpg)
+![](img/operator_k8s_token_scopes.jpg)
 
 Data ingest token scopes:  
-![](img\dataingest_token_scopes.jpg)
+![](img/dataingest_token_scopes.jpg)
 
 Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml)  
 `# curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml`  
