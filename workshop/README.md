@@ -8,7 +8,7 @@
 ## Step 2 - prepare linux
 open terminal and type the following commands:  
 `$ sudo apt-get update`  
-`$ sudo apt-get -y install ca-certificates curl gnupg`
+`$ sudo apt-get -y install ca-certificates curl gnupg dos2unix`
 
 ## Step 3 - install [Docker](https://docs.docker.com/engine/install/ubuntu/)
 `$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`  
@@ -32,6 +32,7 @@ open terminal and type the following commands:
 
 ## Step 6 - install k8s cluster with Kind
 `$ curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/kind-setup.yaml`  
+`$ dos2unix kind-setup.yaml`    
 `$ sudo kind create cluster --config kind-setup.yaml`  
 
 ### Verify k8s cluster
@@ -50,6 +51,7 @@ Link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/
 
 Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml)  
 `# curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml`  
+`# dos2unix dynakube-cloudnativefullstack.yml`    
 `# kubectl apply -f dynakube-cloudnativefullstack.yml`
 
 
