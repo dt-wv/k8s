@@ -42,7 +42,7 @@ open terminal and type the following commands:
 
 Link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-k8s/installation/cloud-native-fullstack)  
 
-Operator token scopes:
+Operator token scopes:  
 ![](img/operator_k8s_token_scopes.jpg)
 
 Data ingest token scopes:  
