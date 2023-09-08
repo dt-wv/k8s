@@ -31,8 +31,7 @@ open terminal and type the following commands:
 `$ sudo chmod +x kind; sudo mv kind /usr/local/bin`
 
 ## Step 6 - install k8s cluster with Kind
-`$ curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/kind-setup.yaml`  
-`$ dos2unix kind-setup.yaml`    
+`$ curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/kind-setup.yaml`    
 `$ sudo kind create cluster --config kind-setup.yaml`  
 
 ### Verify k8s cluster
@@ -50,8 +49,7 @@ Link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/
 ![](img/dataingest_token_scopes.jpg)
 
 Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml)  
-`# curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml`  
-`# dos2unix dynakube-cloudnativefullstack.yml`    
+`# curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml`     
 `# kubectl apply -f dynakube-cloudnativefullstack.yml`
 
 
