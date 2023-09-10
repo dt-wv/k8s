@@ -14,7 +14,7 @@ open terminal and type the following commands:
 `$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`  
 `$ sudo install -m 0755 -d /etc/apt/keyrings`  
 `$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`  
-`$ sudo chmod a+r /etc/apt/keyrings/docker.gpg`
+`$ sudo chmod a+r /etc/apt/keyrings/docker.gpg`  
 `$ echo
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |
@@ -23,7 +23,7 @@ open terminal and type the following commands:
 `$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
 ## Step 4 - install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-`$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
+`$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`  
 `$ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
 
 ## Step 5 - install [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
