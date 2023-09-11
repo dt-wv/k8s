@@ -35,7 +35,8 @@ open terminal and type the following commands:
 `$ sudo kind create cluster --config kind-setup.yaml`  
 
 ### Verify k8s cluster
-`$ sudo kubectl get nodes`
+`$ sudo kubectl get nodes`  
+[Kubectl cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 ## Step 7 - install Dynatrace as CloudNativeFullStack
 `$ sudo su -`
