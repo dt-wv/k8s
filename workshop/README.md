@@ -2,7 +2,9 @@
 
 ## Step 1 - Prerequisites
 - Hypervisor installation (VMWare, Hyper-V, Qemu,...)
-- Ubuntu20.04 64bit (desktop or server)
+- Ubuntu20.04 64bit (desktop or server)  
+  - 40GB disk  
+  - 8GB RAM
 - Access internet
 
 ## Step 2 - prepare linux
