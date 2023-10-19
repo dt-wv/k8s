@@ -39,7 +39,7 @@ Move the kubectl binary to the /usr/local/bin directory and give it the necessar
 `$ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
 
 ## Step 5 - install [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
-Download kind binary:
+Download kind binary:  
 `$ [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64`  
 Make the kind binary executable and move it to the /usr/local/bin directory:  
 `$ sudo chmod +x kind; sudo mv kind /usr/local/bin`
