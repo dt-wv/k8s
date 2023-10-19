@@ -32,16 +32,22 @@ Update the Aptitude package manager:
 Add the necessary packages for docker to the system via Aptitude package manager:  
 `$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
-## Step 4 - install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+## Step 4 - install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)  
+Download latest kubectl binary:  
 `$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`  
+Move the kubectl binary to the /usr/local/bin directory and give it the necessary rights:  
 `$ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
 
 ## Step 5 - install [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+Download kind binary:
 `$ [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64`  
+Make the kind binary executable and move it to the /usr/local/bin directory:  
 `$ sudo chmod +x kind; sudo mv kind /usr/local/bin`
 
-## Step 6 - install k8s cluster with Kind
-`$ curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/kind-setup.yaml`    
+## Step 6 - install k8s cluster with Kind  
+Download the kind-setup yaml file (spec file of the kubernetes cluster)
+`$ curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/kind-setup.yaml`  
+Create a local kubernetes cluster with the kind-setup file:      
 `$ sudo kind create cluster --config kind-setup.yaml`  
 [kind-setup.yaml](https://kind.sigs.k8s.io/docs/user/quick-start/#multi-node-clusters)
 
