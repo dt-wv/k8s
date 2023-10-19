@@ -35,6 +35,7 @@ open terminal and type the following commands:
 ## Step 6 - install k8s cluster with Kind
 `$ curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/kind-setup.yaml`    
 `$ sudo kind create cluster --config kind-setup.yaml`  
+[kind-setup.yaml](https://kind.sigs.k8s.io/docs/user/quick-start/#multi-node-clusters)
 
 ### Verify k8s cluster
 `$ sudo kubectl get nodes`  
