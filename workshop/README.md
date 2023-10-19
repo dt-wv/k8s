@@ -60,7 +60,7 @@ Go to the link of the Dynatrace documentation for a [CloudNativeFullStack](https
 <b>Data ingest token scopes:</b>  
 ![](img/dataingest_token_scopes.jpg)
 
-Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml) and please replace the 'name' and 'apiurl' with the correct values.  
+Dynakube can be downloaded and please replace the 'apiurl' with the correct value.  
 `# curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml`     
 `# kubectl apply -f dynakube-cloudnativefullstack.yml`
 
