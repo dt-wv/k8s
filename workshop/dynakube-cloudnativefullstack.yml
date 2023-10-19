@@ -5,7 +5,7 @@
 apiVersion: dynatrace.com/v1beta1
 kind: DynaKube
 metadata:
-  name: dynakube
+  name: dynakube #if you change the name of the Cluster please make sure that you update the secrets name accordingly
   namespace: dynatrace
   annotations:
     feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
