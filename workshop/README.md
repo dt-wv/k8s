@@ -6,6 +6,7 @@
   - 40GB disk  
   - 8GB RAM
 - Access internet
+- Dynatrace tenant where you can create access tokens
 
 ## Step 2 - prepare linux
 open terminal and type the following commands:  
@@ -44,7 +45,7 @@ open terminal and type the following commands:
 ## Step 7 - install Dynatrace as CloudNativeFullStack
 `$ sudo su -`
 
-Link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-k8s/installation/cloud-native-fullstack)  
+Go to link to Dynatrace [CloudNativeFullStack](https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-k8s/installation/cloud-native-fullstack) and execute all steps until step 4  
 
 <b>Operator token scopes:</b>  
 ![](img/operator_k8s_token_scopes.jpg)
