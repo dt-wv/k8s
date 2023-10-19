@@ -14,15 +14,22 @@ open terminal and type the following commands:
 `$ sudo apt-get -y install ca-certificates curl gnupg dos2unix`
 
 ## Step 3 - install [Docker](https://docs.docker.com/engine/install/ubuntu/)
+Remove and cleanup unnecessary packages:  
 `$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`  
+Create a directory for the keyrings:  
 `$ sudo install -m 0755 -d /etc/apt/keyrings`  
+Download the gpg file for docker and add it to the keyring:  
 `$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`  
+Make the keyring file readable:    
 `$ sudo chmod a+r /etc/apt/keyrings/docker.gpg`  
+Add the docker download location to the Aptitude package manager:    
 `$ echo
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`  
+Update the Aptitude package manager:  
 `$ sudo apt-get update`  
+Add the necessary packages for docker to the system via Aptitude package manager:  
 `$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
 ## Step 4 - install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
@@ -53,7 +60,7 @@ Go to the link of the Dynatrace documentation for a [CloudNativeFullStack](https
 <b>Data ingest token scopes:</b>  
 ![](img/dataingest_token_scopes.jpg)
 
-Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml)  
+Dynakube can be downloaded [here](https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml) and please replace the 'name' and 'apiurl' with the correct values.  
 `# curl -LO https://raw.githubusercontent.com/dt-wv/k8s/main/workshop/dynakube-cloudnativefullstack.yml`     
 `# kubectl apply -f dynakube-cloudnativefullstack.yml`
 
