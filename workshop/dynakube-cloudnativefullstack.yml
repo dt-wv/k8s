@@ -5,7 +5,7 @@
 apiVersion: dynatrace.com/v1beta1
 kind: DynaKube
 metadata:
-  name: "name of k8s cluster to show inside dynatrace" #change me
+  name: dynakube
   namespace: dynatrace
   annotations:
     feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
