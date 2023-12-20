@@ -9,8 +9,6 @@ metadata:
   namespace: dynatrace
   annotations:
     feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
-    feature.dynatrace.com/injection-readonly-volume: "true" #when using CSI driver but the volume is read-only
-    feature.dynatrace.com/init-container-seccomp-profile: "true"
     feature.dynatrace.com/oneagent-initial-connect-retry-ms: 6000 #use this when using sidecar pods 
 
 spec:
@@ -20,7 +18,7 @@ spec:
   oneAgent:
     # Enables Application Only monitoring and changes its settings
     applicationMonitoring:
-      # useCSIDriver: false 
+      useCSIDriver: false  #disables the use of CSI
       
       tolerations:
         - effect: NoSchedule
