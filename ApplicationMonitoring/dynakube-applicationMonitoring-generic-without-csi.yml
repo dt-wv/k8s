@@ -15,7 +15,23 @@ spec:
   apiUrl: https://${environment-id}.live.dynatrace.com/api #change 'environment id' to your saas tenant
   skipCertCheck: false
   tokens: "dynakube"
-  
+
+#---
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  name: easytravel
+#  labels:
+#    instrumentation: oneagent
+
+  namespaceSelector:
+    matchLabels:
+      instrumentation: oneagent
+    matchExpressions:
+      - key: instrumentation
+        operator: In
+        values: [oneagent]
+
   oneAgent:
     # Enables Application Only monitoring and changes its settings
     applicationMonitoring:
