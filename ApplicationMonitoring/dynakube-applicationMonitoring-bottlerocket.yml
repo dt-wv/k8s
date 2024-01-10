@@ -11,7 +11,7 @@ metadata:
     feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
     feature.dynatrace.com/injection-readonly-volume: "true" #when using CSI driver but the volume is read-only
     feature.dynatrace.com/init-container-seccomp-profile: "true"
-    feature.dynatrace.com/oneagent-initial-connect-retry-ms: 6000 #use this when using sidecar pods 
+    feature.dynatrace.com/oneagent-initial-connect-retry-ms: "6000" #use this when using sidecar pods 
 
 spec:
   apiUrl: https://${environment-id}.live.dynatrace.com/api #change 'environment id' to your saas tenant
@@ -22,14 +22,6 @@ spec:
     applicationMonitoring:
       # useCSIDriver: false 
       
-      tolerations:
-        - effect: NoSchedule
-          key: node-role.kubernetes.io/master
-          operator: Exists
-        - effect: NoExists
-          key: node-role.kubernetes.io/control-plane
-          operator:  ActiveGate instances.
-
 
   activeGate:
 

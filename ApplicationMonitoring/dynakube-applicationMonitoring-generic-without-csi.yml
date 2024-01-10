@@ -14,20 +14,13 @@ metadata:
 spec:
   apiUrl: https://${environment-id}.live.dynatrace.com/api #change 'environment id' to your saas tenant
   skipCertCheck: false
-
+  tokens: "dynakube"
+  
   oneAgent:
     # Enables Application Only monitoring and changes its settings
     applicationMonitoring:
       useCSIDriver: false  #disables the use of CSI
       
-      tolerations:
-        - effect: NoSchedule
-          key: node-role.kubernetes.io/master
-          operator: Exists
-        - effect: NoExists
-          key: node-role.kubernetes.io/control-plane
-          operator:  ActiveGate instances.
-
 
   activeGate:
 
