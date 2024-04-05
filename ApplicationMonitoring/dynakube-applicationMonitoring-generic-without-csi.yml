@@ -25,6 +25,7 @@ spec:
 #    instrumentation: oneagent
 
   namespaceSelector:
+    # using matchlabels or matchexpression, one can be removed
     matchLabels:
       instrumentation: oneagent
     matchExpressions:
