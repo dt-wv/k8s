@@ -15,6 +15,7 @@ spec:
   apiUrl: https://${environment-id}.live.dynatrace.com/api #change 'environment id' to your saas tenant
   skipCertCheck: false
   tokens: "dynakube"
+  enableIstio: false #set to true when using service mesh istio
 
 #---
 #apiVersion: v1
