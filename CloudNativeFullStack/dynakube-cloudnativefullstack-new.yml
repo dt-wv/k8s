@@ -9,6 +9,7 @@ metadata:
   namespace: dynatrace
   annotations:
     feature.dynatrace.com/k8s-app-enabled: "true"
+    feature.dynatrace.com/oneagent-initial-connect-retry-ms: "6000" #use this when using sidecar pods
 spec:
   apiUrl: https://${environment-id}.live.dynatrace.com/api  #change 'enviroment-id' to your saas tenant
   skipCertCheck: false
@@ -19,7 +20,7 @@ spec:
 #apiVersion: v1
 #kind: Namespace
 #metadata:
-#  name: easytravel
+#  name: my_namespace
 #  labels:
 #    instrumentation: oneagent
 
