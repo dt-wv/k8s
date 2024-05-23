@@ -1,56 +1,50 @@
 #annotation feature flags
-#https://github.com/Dynatrace/dynatrace-operator/blob/main/pkg/api/v1beta1/dynakube/feature_flags.go
+#https://github.com/Dynatrace/dynatrace-operator/blob/main/src/api/v1beta1/dynakube/feature_flags.go
 #https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-k8s/reference/dynakube-feature-flags
 #
 apiVersion: dynatrace.com/v1beta1
 kind: DynaKube
 metadata:
-  name: "name of the K8s to show inside dynatrace" #change me
+  name: "name of k8s cluster to show inside dynatrace" #change me
   namespace: dynatrace
   annotations:
     feature.dynatrace.com/k8s-app-enabled: "true"
-    feature.dynatrace.com/oneagent-initial-connect-retry-ms: "6000" #use this when using sidecar pods
+    feature.dynatrace.com/oneagent-initial-connect-retry-ms: "6000" #use this when using sidecar pods 
+
 spec:
-  apiUrl: https://${environment-id}.live.dynatrace.com/api  #change 'enviroment-id' to your saas tenant
+  apiUrl: https://${environment-id}.live.dynatrace.com/api #change 'environment id' to your saas tenant
   skipCertCheck: false
   tokens: "dynakube"
   enableIstio: false #set to true when using service mesh istio
-
+  
   # Optional: Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment
   # The secret has to be of type 'kubernetes.io/dockerconfigjson' (see https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
   #customPullSecret: "custom-pull-secret"
-  
+
 #---
 #apiVersion: v1
 #kind: Namespace
 #metadata:
-#  name: my_namespace
+#  name: easytravel
 #  labels:
 #    instrumentation: oneagent
 
   namespaceSelector:
+    # using matchlabels or matchexpression, one can be removed
     matchLabels:
       instrumentation: oneagent
 
-
   oneAgent:
-    # Enables Cloud native fullstack monitoring and changes its settings
-    cloudNativeFullStack:
-
+    # Enables Application Only monitoring and changes its settings
+    applicationMonitoring:
+      useCSIDriver: true  #enable the use of CSI
+     
      # When using private registry uncomment the following
-     #image: <your-private-registry>/dynatrace-oneagent:<tag>
      #codeModulesImage: <your-private-registry>/dynatrace-codemodules:<tag>
-
-      tolerations:
-        - effect: NoSchedule
-          key: node-role.kubernetes.io/master
-          operator: Exists
-        - effect: NoExists
-          key: node-role.kubernetes.io/control-plane
-          operator:  ActiveGate instances.
-
+      
 
   activeGate:
+   
    # When using private registry uncomment the following
    #image: <your-private-registry>/dynatrace-activegate:<tag>
 
